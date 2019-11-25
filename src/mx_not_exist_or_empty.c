@@ -7,7 +7,7 @@ void mx_not_exist_or_empty(char *argv) {
     if (fd < 0) {
         write(2, "error: file ", 12);
         write(2, argv, mx_strlen(argv));
-        write(2, " doesn't exist\n", 15);
+        write(2, " does not exist\n", 16);
         close(fd);
         exit(0);
     }
