@@ -8,18 +8,21 @@ SRC = ./main.c \
 ./mx_first_line_not_valid.c \
 ./mx_line_not_valid.c \
 ./mx_not_exist_or_empty.c \
+./mx_invalid_number.c \
 
 SRCS = ./src/main.c \
 ./src/mx_printerr.c \
 ./src/mx_first_line_not_valid.c \
 ./src/mx_line_not_valid.c \
 ./src/mx_not_exist_or_empty.c \
+./src/mx_invalid_number.c \
 
 POBJ = ./main.o \
 ./mx_printerr.o \
 ./mx_first_line_not_valid.o \
 ./mx_line_not_valid.o \
 ./mx_not_exist_or_empty.o \
+./mx_invalid_number.o \
 
 LOBJ = ./mx_printchar.o \
 ./mx_print_unicode.o \

@@ -7,8 +7,7 @@ static void print_line_not_valid(int i) {
     exit(0);
 }
 
-void mx_line_not_valid(char *argv) {
-    char **arr = mx_strsplit(mx_file_to_str(argv), '\n');
+void mx_line_not_valid(char **arr) {
     int i = 1;
     int k = 0;
     for(i = 1; arr[i] != NULL; i++) {
