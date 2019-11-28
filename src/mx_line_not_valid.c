@@ -8,29 +8,24 @@ static void print_line_not_valid(int i) {
 }
 
 void mx_line_not_valid(char **arr) {
-    int i = 1;
-    int k = 0;
-    for(i = 1; arr[i] != NULL; i++) {
+    for(int i = 1; arr[i] != NULL; i++) {
+        int k = 0;
         while(arr[i][k] != '-') {
-            if(mx_isalpha(arr[i][k]) == 0) {
+            if(mx_isalpha(arr[i][k]) == 0)
                 print_line_not_valid(i);
-            }
             k++;
         }
         k++;
         while(arr[i][k] != ',') {
-            if(mx_isalpha(arr[i][k]) == 0) {
+            if(mx_isalpha(arr[i][k]) == 0)
                 print_line_not_valid(i);
-            }
             k++;
         }
         k++;
         while(arr[i][k] != '\0') {
-            if(mx_isdigit(arr[i][k]) == 0) {
+            if(mx_isdigit(arr[i][k]) == 0)
                 print_line_not_valid(i);
-            }
             k++;
         }
-        k = 0;
     }
 }

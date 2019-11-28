@@ -193,7 +193,7 @@ OBJ = ./mx_printchar.o \
 ./mx_isdigit.o \
 ./mx_isalpha.o \
 ./mx_swap_str.o \
-./mx_strlen_my.o
+./mx_strlen_my.o \
 
 OBJO = ./obj/mx_printchar.o \
 ./obj/mx_print_unicode.o \
