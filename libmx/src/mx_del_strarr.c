@@ -1,9 +1,11 @@
 #include "libmx.h"
 
 void mx_del_strarr(char ***arr) {
-    for (int i = 0; arr[i] != NULL; i++) {
-        mx_strdel(arr[i]);
+    char **p = *arr;
+    while (*p != NULL) {
+        mx_strdel(p);
+        p++;
     }
-    free(arr);
-    arr = NULL;
+    free(*arr);
+    *arr = NULL;
 }

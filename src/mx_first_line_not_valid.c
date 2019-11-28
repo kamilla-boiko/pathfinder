@@ -8,4 +8,5 @@ void mx_first_line_not_valid(char *argv) {
             exit(0);
         }
     }
+    mx_strdel(&str);
 }
