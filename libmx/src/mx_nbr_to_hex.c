@@ -8,19 +8,15 @@ char *mx_nbr_to_hex(unsigned long nbr) {
         s[0] = 48;
         return s;    
     }
-    while (newnbr) {
+    for (; newnbr; size++)
         newnbr = newnbr / 16;
-        size++;
-    }
     char *hex = mx_strnew(size);
     for (int i = size - 1; i >= 0; i--) {
         hex[i] = nbr % 16;
-        if (hex[i] <= 9) {
+        if (hex[i] <= 9) 
             hex[i] = hex[i] + 48;
-        }
-        else if (hex[i] > 9) {
+        else if (hex[i] > 9)
             hex[i] = hex[i] + 87;
-        }
         nbr = nbr / 16;
     }
     return hex;
