@@ -4,6 +4,7 @@ char *mx_strstr(const char *haystack, const char *needle) {
     while(*haystack) {
         if(*haystack == *needle) {
             int i = 0;
+            
             while(haystack[i] == needle[i]) {
                 i++;
             }

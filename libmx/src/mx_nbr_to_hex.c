@@ -3,6 +3,7 @@
 char *mx_nbr_to_hex(unsigned long nbr) {
     int size = 0;
     unsigned long newnbr = nbr;
+
     if (nbr == 0) {
         char *s = mx_strnew(1);
         s[0] = 48;

@@ -23,37 +23,42 @@ static int size_of_arr(char **arr) {
     return i;
 }
 
-static void write_to_arr(char **arr1, char **arr2) {
-    int i = 0;
-    int k = 0;
-    while(arr1[i] != NULL) {
-        arr2[k] = mx_strnew(mx_strlen(arr1[i]));
-        for (int j = 0; arr1[i][j] != '\0'; j++)
-            arr2[k][j] = arr1[i][j];
-        while (mx_strcmp(arr2[k], arr1[i]) == 0 && arr1[i + 1] != NULL)
-            i++;
-    if (mx_strcmp(arr2[k], arr1[i]) == 0)
-        i++;
-        k++;
+static char **write_to_arr(char **arr1) {
+    char **arr2 = malloc((size_of_arr(arr1) + 1) * sizeof(char *));
+    int k = 1;
+    int len = mx_strlen(arr1[0]);
+    arr2[0] = mx_strnew(len);
+    for (int n = 0; n < len; n++)
+        arr2[0][n] = arr1[0][n];
+    for (int i = 1; arr1[i] != NULL; i++) {
+        int j = 0;
+        for (; mx_strcmp(arr1[i], arr2[j]) != 0 && j < k - 1; j++);
+        if (j == k - 1 && mx_strcmp(arr1[i], arr2[j]) != 0) {
+            len = mx_strlen(arr1[i]);
+            arr2[k] = mx_strnew(len);
+            for (int n = 0; n < len; n++)
+                arr2[k][n] = arr1[i][n];
+            k++;
+        }
     }
     arr2[k] = NULL;
+    return arr2;
 }
 
-void mx_invalid_number(char **arr, int len_str) {
+char **mx_invalid_number(char **arr, int len_str, int *num_isl) {
     int num = 0;
     for (int i = 0; arr[0][i] != '\0'; i++) 
         num = (10 * num) + arr[0][i] - 48;
     char *str = arr_to_str(arr, len_str);
+    mx_del_strarr(&arr);
     char **arr1 = mx_strsplit(str, ',');
     mx_strdel(&str);
-    mx_bubble_sort(arr1, size_of_arr(arr1));
-    char **arr2 = (char**)malloc((size_of_arr(arr1) + 1) * sizeof(char*));
-    write_to_arr(arr1, arr2);
+    char **arr2 = write_to_arr(arr1);
     mx_del_strarr(&arr1);
-    int count_isl = size_of_arr(arr2);
-    mx_del_strarr(&arr2);
-    if (num != count_isl) {
+    *num_isl = size_of_arr(arr2);
+    if (num != *num_isl) {
         write(2, "error: invalid number of islands\n", 33);
         exit(0);
     }
+    return arr2;
 }

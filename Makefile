@@ -9,6 +9,9 @@ SRC = ./main.c \
 ./mx_line_not_valid.c \
 ./mx_not_exist_or_empty.c \
 ./mx_invalid_number.c \
+./mx_new_list.c \
+./mx_push_list.c \
+./mx_arr_to_list.c \
 
 SRCS = ./src/main.c \
 ./src/mx_printerr.c \
@@ -16,6 +19,9 @@ SRCS = ./src/main.c \
 ./src/mx_line_not_valid.c \
 ./src/mx_not_exist_or_empty.c \
 ./src/mx_invalid_number.c \
+./src/mx_new_list.c \
+./src/mx_push_list.c \
+./src/mx_arr_to_list.c \
 
 POBJ = ./main.o \
 ./mx_printerr.o \
@@ -23,6 +29,9 @@ POBJ = ./main.o \
 ./mx_line_not_valid.o \
 ./mx_not_exist_or_empty.o \
 ./mx_invalid_number.o \
+./mx_new_list.o \
+./mx_push_list.o \
+./mx_arr_to_list.o \
 
 LOBJ = ./mx_printchar.o \
 ./mx_print_unicode.o \

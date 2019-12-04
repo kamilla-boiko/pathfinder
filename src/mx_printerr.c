@@ -1,6 +1,6 @@
 #include "pathfinder.h"
 
-void mx_printerr(int argc, char *argv) {
+char **mx_printerr(int argc, char *argv, int *num) {
     if (argc != 2) {
         write(2, "usage: ./pathfinder [filename]\n", 31);
         exit(0);
@@ -13,7 +13,7 @@ void mx_printerr(int argc, char *argv) {
         char **arr = mx_strsplit(str, '\n');
         mx_strdel(&str);
         mx_line_not_valid(arr);
-        mx_invalid_number(arr, len_str);
-        mx_del_strarr(&arr);
+        arr = mx_invalid_number(arr, len_str, num);
+        return arr;
     }
 }

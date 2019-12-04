@@ -1,6 +1,20 @@
 #include "pathfinder.h"
 
 int main(int argc, char *argv[]) {
-    mx_printerr(argc, argv[1]);
+    int num_isl = 0;
+    mx_printerr(argc, argv[1], &num_isl);
+    char *str = mx_file_to_str(argv[1]);
+    char **arr = mx_strsplit(str, '\n');
+    t_path *list = mx_arr_to_list(arr);
+    while (list->next != NULL) {
+    	printf("%s\n", list->isl1);
+    	printf("%s\n", list->isl2);
+    	printf("%d\n", list->dist);
+    	list = list->next;
+    }
+    printf("%s\n", list->isl1);
+    printf("%s\n", list->isl2);
+    printf("%d\n", list->dist);
+    // system("leaks -q pathfinder");
     return 0;
 }

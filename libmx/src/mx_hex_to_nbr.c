@@ -3,6 +3,7 @@
 unsigned long mx_hex_to_nbr(const char *hex) {
     unsigned long res = 0;
     long int pow = mx_strlen(hex) - 1;
+    
     for (int i = 0; pow >= 0; i++) {
         if ((hex[i] > 64 && hex[i] < 71) || (hex[i] > 96 && hex[i] < 103)) {
             if (hex[i] >= 65 && hex[i] <= 70)
