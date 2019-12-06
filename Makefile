@@ -12,6 +12,10 @@ SRC = ./main.c \
 ./mx_new_list.c \
 ./mx_push_list.c \
 ./mx_arr_to_list.c \
+./mx_create_matrix.c \
+./mx_fil_matrix.c \
+./mx_pathfinder.c \
+#./mx_algorithm.c \
 
 SRCS = ./src/main.c \
 ./src/mx_printerr.c \
@@ -22,6 +26,10 @@ SRCS = ./src/main.c \
 ./src/mx_new_list.c \
 ./src/mx_push_list.c \
 ./src/mx_arr_to_list.c \
+./src/mx_create_matrix.c \
+./src/mx_fil_matrix.c \
+./src/mx_pathfinder.c \
+#./src/mx_algorithm.c \
 
 POBJ = ./main.o \
 ./mx_printerr.o \
@@ -32,6 +40,10 @@ POBJ = ./main.o \
 ./mx_new_list.o \
 ./mx_push_list.o \
 ./mx_arr_to_list.o \
+./mx_create_matrix.o \
+./mx_fil_matrix.o \
+./mx_pathfinder.o \
+#./mx_algorithm.o \
 
 LOBJ = ./mx_printchar.o \
 ./mx_print_unicode.o \
