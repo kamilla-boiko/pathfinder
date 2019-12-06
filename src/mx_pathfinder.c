@@ -14,7 +14,9 @@ static void mx_print_arr_int(int **arr, int size) {
 t_path *mx_pathfinder(t_path *list, char **arr, int num_isl) {
     int **arr_W = mx_create_matrix(num_isl);
     int **arr_H = mx_create_matrix(num_isl);
+
     mx_fil_matrix(&arr_W, &arr_H, list, arr);
+    mx_algorithm(&arr_W, &arr_H, num_isl);
     mx_print_arr_int(arr_W, num_isl);
     mx_printstr("-----------------------\n");
     mx_print_arr_int(arr_H, num_isl);

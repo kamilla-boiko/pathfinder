@@ -21,5 +21,6 @@ t_path *mx_arr_to_list(char **arr);
 int **mx_create_matrix(int num_isl);
 t_path *mx_pathfinder(t_path *list, char **arr, int num_isl);
 void mx_fil_matrix(int ***arr_W, int ***arr_H, t_path *list, char **arr);
+void mx_algorithm(int ***arr_W, int ***arr_H, int num_isl);
 
 #endif

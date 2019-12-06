@@ -15,7 +15,7 @@ SRC = ./main.c \
 ./mx_create_matrix.c \
 ./mx_fil_matrix.c \
 ./mx_pathfinder.c \
-#./mx_algorithm.c \
+./mx_algorithm.c \
 
 SRCS = ./src/main.c \
 ./src/mx_printerr.c \
@@ -29,7 +29,7 @@ SRCS = ./src/main.c \
 ./src/mx_create_matrix.c \
 ./src/mx_fil_matrix.c \
 ./src/mx_pathfinder.c \
-#./src/mx_algorithm.c \
+./src/mx_algorithm.c \
 
 POBJ = ./main.o \
 ./mx_printerr.o \
@@ -43,7 +43,7 @@ POBJ = ./main.o \
 ./mx_create_matrix.o \
 ./mx_fil_matrix.o \
 ./mx_pathfinder.o \
-#./mx_algorithm.o \
+./mx_algorithm.o \
 
 LOBJ = ./mx_printchar.o \
 ./mx_print_unicode.o \
@@ -114,7 +114,7 @@ LIB = ./libmx.a
 
 CFLGS = -std=c11 -Wall -Wextra -Wpedantic -Werror 
 
-all: install uninstall launch
+all: install uninstall #launch
 
 launch: 
 	@./pathfinder i.txt | cat -e

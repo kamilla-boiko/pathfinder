@@ -7,30 +7,25 @@ static int hesh(char **arr, char *str) {
     return i;
 }
 
-static int size_of_list(t_path *list) {
-    if (!list)
-    	return 0;
-    int count = 1;
-    t_path *tmp = list;
-
-    while (tmp->next != NULL) {
-        count++;
-        tmp = tmp->next;
+static int size_of_arr(char **arr) {
+    int i = 0;
+    while (arr[i] != NULL) {
+    	i++;
     }
-    return count;
+    return i;
 }
 
-static void matrix_W(int ***arr_W, t_path *list) {
+static void matrix_W(int ***arr_W, char **arr) {
     int **arr_w = *arr_W;
-    int max_int = 2147483647;
-    int size = size_of_list(list);
-
+    int inf = 999999999;
+    int size = size_of_arr(arr);
+    
     for (int i = 0; i < size; i++) {
         for (int k = 0; k < size; k++) {
             if (i == k)
                 arr_w[i][k] = 0;
             else
-                arr_w[i][k] = max_int;
+                arr_w[i][k] = inf;
         }
     }
 }
@@ -39,7 +34,7 @@ void mx_fil_matrix(int ***arr_W, int ***arr_H, t_path *list, char **arr) {
     int **arr_w = *arr_W;
     int **arr_h = *arr_H;
 
-    matrix_W(&arr_w, list);
+    matrix_W(&arr_w, arr);
     while (list != NULL) {
         arr_w[hesh(arr, list->isl1)][hesh(arr, list->isl2)] = list->dist;
         arr_w[hesh(arr, list->isl2)][hesh(arr, list->isl1)] = list->dist;
