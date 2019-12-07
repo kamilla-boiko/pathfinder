@@ -1,15 +1,6 @@
 #include "pathfinder.h"
 
-static int atoi_mod(char *str) {
-    int num = 0;
-    while (mx_isdigit(*str) != 1) 
-        str++;
-    while (mx_isdigit(*str) == 1 && *str != '\0') { 
-        num = (10 * num) + *str - 48;
-        str++;
-    }
-    return num;
-}
+static int atoi_mod(char *str);
 
 t_path *mx_arr_to_list(char **arr) {
     char *isl1;
@@ -32,4 +23,15 @@ t_path *mx_arr_to_list(char **arr) {
         mx_push_list(&new, isl1, isl2, h);
     }
     return new;
+}
+
+static int atoi_mod(char *str) {
+    int num = 0;
+    while (mx_isdigit(*str) != 1) 
+        str++;
+    while (mx_isdigit(*str) == 1 && *str != '\0') { 
+        num = (10 * num) + *str - 48;
+        str++;
+    }
+    return num;
 }

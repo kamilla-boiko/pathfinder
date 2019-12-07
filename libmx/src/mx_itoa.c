@@ -1,30 +1,22 @@
 #include "libmx.h"
 
 char *mx_itoa(int number) {
-    char *str;
-    int n = number;
-    int count = 0;
-    while (n != 0) {
-        n = n / 10;
-        count++;
-    }
-    if (number < 0) {
-        str = mx_strnew(count + 1);
+    int sign = 1;
+    int tens = 1;
+    int size = 1;
+    char *str = NULL;
+
+    if (number < 0) 
+        sign = -1;
+    for (int n = number; n / 10 != 0; n /= 10, size++)
+        tens *= 10;
+    str = mx_strnew(size);
+    size = 0;
+    if (sign == -1) {
         str[0] = '-';
-        number = number * -1;
-        while (number != 0) {
-            str[count] = number % 10 + 48;
-            count--;
-            number = number / 10;
-        }
+        size++;
     }
-    else {
-        str = mx_strnew(count);
-        while (number != 0) {
-            str[count - 1] = number % 10 + 48;
-            count--;
-            number = number / 10;
-        }
-    }
+    for (int n = number; tens != 0; n %= tens, tens /= 10, size++)
+        str[size] = n / tens * sign + '0';
     return str;
 }

@@ -16,6 +16,7 @@ SRC = ./main.c \
 ./mx_fil_matrix.c \
 ./mx_pathfinder.c \
 ./mx_algorithm.c \
+./mx_matrix_H.c \
 
 SRCS = ./src/main.c \
 ./src/mx_printerr.c \
@@ -30,6 +31,7 @@ SRCS = ./src/main.c \
 ./src/mx_fil_matrix.c \
 ./src/mx_pathfinder.c \
 ./src/mx_algorithm.c \
+./src/mx_matrix_H.c \
 
 POBJ = ./main.o \
 ./mx_printerr.o \
@@ -44,6 +46,7 @@ POBJ = ./main.o \
 ./mx_fil_matrix.o \
 ./mx_pathfinder.o \
 ./mx_algorithm.o \
+./mx_matrix_H.o \
 
 LOBJ = ./mx_printchar.o \
 ./mx_print_unicode.o \
