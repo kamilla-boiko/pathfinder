@@ -9,8 +9,8 @@ void *mx_memrchr(const void *s, int c, size_t n) {
     while (i < n) {
         if (*str == c)
             return str;
-      i++;
-      str--;
+        i++;
+        str--;
     }
     return NULL;
 }
