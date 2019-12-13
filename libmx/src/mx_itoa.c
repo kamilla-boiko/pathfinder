@@ -5,10 +5,11 @@ char *mx_itoa(int number) {
     int tens = 1;
     int size = 1;
     char *str = NULL;
+    int n = 0;
 
     if (number < 0) 
         sign = -1;
-    for (int n = number; n / 10 != 0; n /= 10, size++)
+    for (n = number; n / 10 != 0; n /= 10, size++)
         tens *= 10;
     str = mx_strnew(size);
     size = 0;
@@ -16,7 +17,7 @@ char *mx_itoa(int number) {
         str[0] = '-';
         size++;
     }
-    for (int n = number; tens != 0; n %= tens, tens /= 10, size++)
+    for (n = number; tens != 0; n %= tens, tens /= 10, size++)
         str[size] = n / tens * sign + '0';
     return str;
 }
