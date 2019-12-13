@@ -16,7 +16,7 @@ char *mx_nbr_to_hex(unsigned long nbr) {
     for (int i = size - 1; i >= 0; i--) {
         if (nbr % 16 <= 9) 
             hex[i] = nbr % 16 + 48;
-        else if (hex[i] > 9)
+        else if (nbr % 16 > 9)
             hex[i] = nbr % 16 + 87;
         nbr = nbr / 16;
     }
