@@ -5,17 +5,15 @@ void *mx_memmem(const void *big, size_t big_len,
     unsigned int j = 1;
     unsigned char *b = (unsigned char *)big;
     unsigned char *l = (unsigned char *)little;
-    unsigned char *cb = NULL;
-    unsigned char *cl = NULL;
 
-    for (unsigned int i = 0; *b != '\0' && i < big_len; i++) {
+    while (*b != '\0' && 0 < big_len--) {
         if(*b == *l) {
-            cb = b;
-            cl = l;
-            while (*cb == *cl && j < little_len) {
+            unsigned char *cb = b;
+            unsigned char *cl = l;
+
+            for (; *cb == *cl && j < little_len; j++) {
                 cb++;
                 cl++;
-                j++;
             }
             if (j == little_len && *cb == *cl)
                 return b;
