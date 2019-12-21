@@ -5,7 +5,7 @@ void *mx_memmem(const void *big, size_t big_len,
     unsigned int j = 1;
     unsigned char *b = (unsigned char *)big;
     unsigned char *l = (unsigned char *)little;
-
+    
     while (*b != '\0' && 0 < big_len--) {
         if(*b == *l) {
             unsigned char *cb = b;

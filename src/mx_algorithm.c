@@ -25,8 +25,8 @@ void mx_algorithm(int ***arr_W, t_turn ****arr_H, int num_isl) {
                     arr_w[i][j] = arr_w[i][k] + arr_w[k][j];
                     arr_h[i][j]->turn = k; 
                 }
-                // if (arr_w[i][j] == arr_w[i][k] + arr_w[k][j])
-                //     pb_turn(&arr_h[i][j], k);
+                if (arr_w[i][j] == arr_w[i][k] + arr_w[k][j])
+                    pb_turn(&arr_h[i][j], k);
             }
         }
     }

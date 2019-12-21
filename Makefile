@@ -117,27 +117,28 @@ LIB = ./libmx.a
 
 CFLGS = -std=c11 -Wall -Wextra -Wpedantic -Werror 
 
-all: install uninstall #launch
+all: install clean #launch
 
 launch: 
 	@./pathfinder i.txt | cat -e
 
 install:
-	@cd libmx && make -f Makefile install
+	@make install -sC libmx/
 	@cp $(INCI) $(SRCS) $(LIBL) .
 	@ar x $(LIB)
 	@clang $(CFLGS) -c $(SRC) -I $(INC)
 	@clang $(CFLGS) -o $(NAME) $(LOBJ) $(POBJ)
-	@mkdir  obj
+	@mkdir obj
 	@mv $(POBJ) $(LOBJ) ./obj
+	@rm -rf $(SRC) $(INC) 
+	@rm -rf libmx.a __.SYMDEF\ SORTED libmx.h.gch
 
-uninstall:
-	@cd libmx && make -f Makefile uninstall
-	@rm -rf $(SRC) $(INC)
-	@rm -rf ./obj libmx.a __.SYMDEF\ SORTED libmx.h.gch
-
-clean: uninstall
-	@cd libmx && make -f Makefile clean
+uninstall: clean
+	@make uninstall -sC libmx/
 	@rm -rf $(NAME)
 
-reinstall: clean all
+clean:
+	@make clean -sC libmx/
+	@rm -rf ./obj
+
+reinstall: uninstall install

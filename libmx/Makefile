@@ -261,21 +261,21 @@ OBJO = ./obj/mx_printchar.o \
 
 CFLGS = -std=c11 -Wall -Wextra -Wpedantic -Werror 
 
-all: install uninstall
+all: install clean
 
 install:
-	@cp $(INC) $(SRCS) .
-	@clang $(CFLGS) -c  $(SRC)
 	@mkdir  obj
+	@cp $(INC) $(SRCS) .
+	@clang $(CFLGS) -c $(SRC) -I $(HEADTMP)
+	@ar -rc $(NAME) $(OBJ)
 	@mv $(OBJ) ./obj
-	@ar -rc $(NAME) $(OBJO)
+	@rm -rf $(SRC) $(HEADTMP)
 
-uninstall:
-	@rm -rf $(OBJO) $(SRC) $(HEADTMP)
-	@rm -rf ./obj
-
-clean: uninstall
+uninstall: clean
 	@rm -rf $(NAME)
 
-reinstall: clean all
+clean: 
+	@rm -rf ./obj
+
+reinstall: uninstall install
 

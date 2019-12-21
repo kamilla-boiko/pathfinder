@@ -13,5 +13,5 @@ char *mx_strtrim(const char *str) {
     trim = mx_strnew(j - i + 1);
     for (int k = 0; i <= j; k++, i++)
         trim[k] = str[i];
-    return trim; 
+    return trim;
 }
