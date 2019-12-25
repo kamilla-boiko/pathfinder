@@ -1,11 +1,6 @@
 #include "pathfinder.h"
 
-static void print_line_not_valid(int i) {
-    write(2, "error: line ", 12);
-    write(2, mx_itoa(i + 1), mx_strlen(mx_itoa(i)));
-    write(2, " isn't valid\n", 13);
-    exit(0);
-}
+static void print_line_not_valid(int i);
 
 void mx_line_not_valid(char **arr) {
     for(int i = 1; arr[i] != NULL; i++) {
@@ -28,4 +23,11 @@ void mx_line_not_valid(char **arr) {
             k++;
         }
     }
+}
+
+static void print_line_not_valid(int i) {
+    write(2, "error: line ", 12);
+    write(2, mx_itoa(i + 1), mx_strlen(mx_itoa(i)));
+    write(2, " isn't valid\n", 13);
+    exit(0);
 }

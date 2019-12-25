@@ -7,6 +7,7 @@ void mx_push_list(t_path **list, char *isl1, char *isl2, int dist) {
         *list = new;
     else {
         t_path *last = *list;
+        
         while(last->next != NULL)
             last = last->next;
         last->next = new;

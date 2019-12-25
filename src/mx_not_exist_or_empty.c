@@ -4,6 +4,7 @@ void mx_not_exist_or_empty(char *argv) {
     int fd = open(argv, O_RDONLY);
     char buf;
     int num = read(fd, &buf, 1);
+
     if (fd < 0) {
         write(2, "error: file ", 12);
         write(2, argv, mx_strlen(argv));

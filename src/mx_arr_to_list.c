@@ -3,15 +3,14 @@
 static int atoi_mod(char *str);
 
 t_path *mx_arr_to_list(char **arr) {
-    char *isl1;
-    char *isl2;
     t_path *new = NULL;
 
     for (int i = 1; arr[i] != NULL; i++) {
         int k = 0;
         int h = 0;
-        isl1 = mx_strnew(mx_strlen_my(arr[i], '-'));
-        isl2 = mx_strnew(mx_get_char_index(arr[i], ',') - mx_get_char_index(arr[i], '-'));
+        char *isl1 = mx_strnew(mx_strlen_my(arr[i], '-'));
+        char *isl2 = mx_strnew(mx_get_char_index(arr[i], ',') - mx_get_char_index(arr[i], '-'));
+
         while (arr[i][k] != '-')
             isl1[h++] = arr[i][k++];
         k++;
@@ -27,6 +26,7 @@ t_path *mx_arr_to_list(char **arr) {
 
 static int atoi_mod(char *str) {
     int num = 0;
+    
     while (mx_isdigit(*str) != 1) 
         str++;
     while (mx_isdigit(*str) == 1 && *str != '\0') { 
