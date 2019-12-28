@@ -1,16 +1,5 @@
 #include "pathfinder.h"
 
-// static void mx_print_arr_int(int **arr, int size) {
-//     for (int i = 0; i < size; i++) {
-//         for (int k = 0; k < size; k++) {
-//             mx_printint(arr[i][k]);
-//             mx_printchar(' ');
-//         }
-//         mx_printchar('\n');
-//     }
-//     mx_printchar('\n');
-// }
-
 static void print_list(t_adj **adj, int size) {
     for (int i = 0; i < size; i++) {
         printf("%d\t", i);
@@ -27,7 +16,7 @@ static void print_list(t_adj **adj, int size) {
     }
 }
 
-t_path *mx_pathfinder(t_path *list, char **arr, int num_isl) {
+t_road *mx_pathfinder(t_road *list, char **arr, int num_isl) {
     int **arr_W = mx_create_matrix(num_isl);
     t_adj **adj = NULL;
 
@@ -37,7 +26,7 @@ t_path *mx_pathfinder(t_path *list, char **arr, int num_isl) {
     // mx_print_arr_int(arr_W, num_isl);
     // mx_printstr("-----------------------\n");
     // mx_print_arr_int_of_3dmx(arr_H, num_isl);
-    t_path *a = NULL;
+    t_road *a = NULL;
     print_list(adj, num_isl);
     return a;
 }

@@ -1,7 +1,7 @@
 #include "pathfinder.h"
 
-t_path *mx_new_list(char *isl1, char *isl2, int dist) {
-    t_path *list = malloc(sizeof(t_path));
+t_road *mx_new_list(char *isl1, char *isl2, int dist) {
+    t_road *list = malloc(sizeof(t_road));
     
     if (list == NULL)
         return NULL;

@@ -3,12 +3,12 @@
 
 #include "libmx.h"
 
-typedef struct s_path {
+typedef struct s_road {
     char *isl1;
     char *isl2;
     int dist;
-    struct s_path *next;
-}         t_path;
+    struct s_road *next;
+}         t_road;
 
 typedef struct s_adj {
     int where;
@@ -16,18 +16,30 @@ typedef struct s_adj {
     struct s_adj *next;
 }         t_adj;
 
+typedef struct s_route {
+    int point;
+    struct s_route *next;
+}         t_route;
+
+typedef struct s_stack {
+	t_route *route;
+	int next_point;
+	int weight;
+	struct s_stack *next;
+}         t_stack;
+
 char **mx_printerr(int argc, char *argv, int *num);
 void mx_not_exist_or_empty(char *argv);
 void mx_line_not_valid(char **arr);
 void mx_first_line_not_valid(char *argv);
 char **mx_invalid_number(char **arr, int len_str, int *num_isl);
-t_path *mx_new_list(char *isl1, char *isl2, int dist);
-void mx_push_list(t_path **list, char *isl1, char *isl2, int dist);
-t_path *mx_arr_to_list(char **arr);
+t_road *mx_new_list(char *isl1, char *isl2, int dist);
+void mx_push_list(t_road **list, char *isl1, char *isl2, int dist);
+t_road *mx_arr_to_list(char **arr);
 int **mx_create_matrix(int num_isl);
-t_path *mx_pathfinder(t_path *list, char **arr, int num_isl);
-void mx_fil_matrix(int ***arr_W, t_path *list, char **arr);
+t_road *mx_pathfinder(t_road *list, char **arr, int num_isl);
+void mx_fil_matrix(int ***arr_W, t_road *list, char **arr);
 void mx_algorithm(int ***arr_W, int num_isl);
-t_adj **mx_adjacency(t_path *list, char **arr, int num_isl);
+t_adj **mx_adjacency(t_road *list, char **arr, int num_isl);
 
 #endif

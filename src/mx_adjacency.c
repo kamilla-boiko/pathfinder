@@ -4,7 +4,7 @@ static int hesh(char **arr, char *str);
 static t_adj *new_list(char **arr, char *where, int weight);
 static void push_list(char **arr, t_adj **list, char *where, int weight);
 
-t_adj **mx_adjacency(t_path *list, char **arr, int num_isl) {
+t_adj **mx_adjacency(t_road *list, char **arr, int num_isl) {
     t_adj **graph = malloc(num_isl * sizeof(t_adj *));
     int h = 0;
 
