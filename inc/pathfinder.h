@@ -35,11 +35,14 @@ void mx_first_line_not_valid(char *argv);
 char **mx_invalid_number(char **arr, int len_str, int *num_isl);
 t_road *mx_new_list(char *isl1, char *isl2, int dist);
 void mx_push_list(t_road **list, char *isl1, char *isl2, int dist);
-t_road *mx_arr_to_list(char **arr);
+t_road *mx_arr_to_list(char **arr, int i);
 int **mx_create_matrix(int num_isl);
-t_road *mx_pathfinder(t_road *list, char **arr, int num_isl);
+void mx_pathfinder(t_road *list, char **arr, int num_isl);
 void mx_fil_matrix(int ***arr_W, t_road *list, char **arr);
 void mx_algorithm(int ***arr_W, int num_isl);
 t_adj **mx_adjacency(t_road *list, char **arr, int num_isl);
+void mx_depth_search(t_adj **Adj, int **arr_W, char **arr, int num_isl);
+void mx_final_print(t_route **route, int **arr_W, char **arr);
+void mx_stack(t_stack **stack, int next, int weight);
 
 #endif

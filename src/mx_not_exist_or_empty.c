@@ -20,4 +20,3 @@ void mx_not_exist_or_empty(char *argv) {
         exit(0);
     }
 }
-

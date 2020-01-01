@@ -38,17 +38,13 @@ static t_adj *new_list(char **arr, char *where, int weight) {
 }
 
 static void push_list(char **arr, t_adj **list, char *where, int weight) {
+    t_adj *first = *list;
     t_adj *new = new_list(arr, where, weight);
 
     if (*list == NULL)
         *list = new;
-    else {
-        t_adj *last = *list;
-        
-        while(last->next != NULL)
-            last = last->next;
-        last->next = new;
-    }
+    new->next = first;
+    *list = new;
 }
 
 static int hesh(char **arr, char *str) {

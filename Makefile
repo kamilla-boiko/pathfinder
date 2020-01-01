@@ -18,6 +18,8 @@ SRC = ./main.c \
 ./mx_algorithm.c \
 ./mx_adjacency.c \
 ./mx_depth_search.c \
+./mx_final_print.c \
+./mx_stack.c \
 
 SRCS = ./src/main.c \
 ./src/mx_printerr.c \
@@ -34,6 +36,8 @@ SRCS = ./src/main.c \
 ./src/mx_algorithm.c \
 ./src/mx_adjacency.c \
 ./src/mx_depth_search.c \
+./src/mx_final_print.c \
+./src/mx_stack.c \
 
 POBJ = ./main.o \
 ./mx_printerr.o \
@@ -50,6 +54,8 @@ POBJ = ./main.o \
 ./mx_algorithm.o \
 ./mx_adjacency.o \
 ./mx_depth_search.o \
+./mx_final_print.o \
+./mx_stack.o \
 
 LOBJ = ./mx_printchar.o \
 ./mx_print_unicode.o \
@@ -118,7 +124,7 @@ LOBJ = ./mx_printchar.o \
 LIBL = ./libmx/libmx.a
 LIB = ./libmx.a
 
-CFLGS = -std=c11 -Wall -Wextra -Wpedantic -Werror 
+CFLGS = -std=c11# -Wall -Wextra -Wpedantic -Werror 
 
 all: install clean #launch
 
@@ -129,8 +135,8 @@ install:
 	@make install -sC libmx/
 	@cp $(INCI) $(SRCS) $(LIBL) .
 	@ar x $(LIB)
-	@clang $(CFLGS) -c $(SRC) -I $(INC)
-	@clang $(CFLGS) -o $(NAME) $(LOBJ) $(POBJ)
+	@gcc $(CFLGS) -c $(SRC) -I $(INC)
+	@gcc $(CFLGS) -o $(NAME) $(LOBJ) $(POBJ)
 	@mkdir obj
 	@mv $(POBJ) $(LOBJ) ./obj
 	@rm -rf $(SRC) $(INC) 

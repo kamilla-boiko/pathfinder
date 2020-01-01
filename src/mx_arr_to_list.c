@@ -2,10 +2,10 @@
 
 static int atoi_mod(char *str);
 
-t_road *mx_arr_to_list(char **arr) {
+t_road *mx_arr_to_list(char **arr, int i) {
     t_road *new = NULL;
 
-    for (int i = 1; arr[i] != NULL; i++) {
+    for (i = 1; arr[i] != NULL; i++) {
         int k = 0;
         int h = 0;
         char *isl1 = mx_strnew(mx_strlen_my(arr[i], '-'));
@@ -27,7 +27,7 @@ t_road *mx_arr_to_list(char **arr) {
 
 static int atoi_mod(char *str) {
     int num = 0;
-    
+
     while (mx_isdigit(*str) != 1) 
         str++;
     while (mx_isdigit(*str) == 1 && *str != '\0') { 
