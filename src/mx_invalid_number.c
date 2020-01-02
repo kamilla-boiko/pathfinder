@@ -55,7 +55,7 @@ static char **write_to_arr(char **arr1) {
     char **arr2 = malloc((size_of_arr(arr1) + 1) * sizeof(char *));
     int k = 1;
     int n = 0;
-    
+
     arr2[0] = mx_strnew(mx_strlen(arr1[0]));
     for (n = 0; n < mx_strlen(arr1[0]); n++)
         arr2[0][n] = arr1[0][n];

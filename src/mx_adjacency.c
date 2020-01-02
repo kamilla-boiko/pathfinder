@@ -28,7 +28,7 @@ t_adj **mx_adjacency(t_road *list, char **arr, int num_isl) {
 
 static t_adj *new_list(char **arr, char *where, int weight) {
     t_adj *list = malloc(sizeof(t_adj));
-    
+
     if (list == NULL)
         return NULL;
     list->where = hesh(arr, where);
@@ -49,7 +49,7 @@ static void push_list(char **arr, t_adj **list, char *where, int weight) {
 
 static int hesh(char **arr, char *str) {
     int i = 0;
-    
+
     while (mx_strcmp(arr[i], str) != 0)
         i++;
     return i;

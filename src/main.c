@@ -8,6 +8,5 @@ int main(int argc, char *argv[]) {
     t_road *list = mx_arr_to_list(arr, num_isl);
 
     mx_pathfinder(list, arr_isl, num_isl);
-    // system("leaks -q pathfinder");
     return 0;
 }

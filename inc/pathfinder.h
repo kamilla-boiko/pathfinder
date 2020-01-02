@@ -44,5 +44,6 @@ t_adj **mx_adjacency(t_road *list, char **arr, int num_isl);
 void mx_depth_search(t_adj **Adj, int **arr_W, char **arr, int num_isl);
 void mx_final_print(t_route **route, int **arr_W, char **arr);
 void mx_stack(t_stack **stack, int next, int weight);
+void mx_del_first_stack(t_stack **stack);
 
 #endif
