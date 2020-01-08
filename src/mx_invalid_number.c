@@ -70,6 +70,7 @@ static char **write_to_arr(char **arr1) {
             k++;
         }
     }
+    
     arr2[k] = NULL;
     return arr2;
 }
