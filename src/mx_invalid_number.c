@@ -32,6 +32,7 @@ static char *arr_to_str(char **arr, int len_str) {
 
     for (int i = 1; arr[i] != NULL; i++) {
         int k = 0;
+
         for (; !mx_isdigit(arr[i][k]); k++) {
             if (mx_isalpha(arr[i][k]))
                 s[h++] = arr[i][k];
@@ -70,8 +71,6 @@ static char **write_to_arr(char **arr1) {
             k++;
         }
     }
-    
     arr2[k] = NULL;
     return arr2;
 }
-

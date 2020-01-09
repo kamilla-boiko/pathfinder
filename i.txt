@@ -1,7 +1,8 @@
-5
-A-B,11
-A-C,10
-B-D,5
-C-D,6
-C-E,15
-D-E,4
+8
+Kyiv-Kharkiv,471
+Nikopol-Kharkiv,340
+Kyiv-Warsaw,766
+Kyiv-Paris,2403
+Kyiv-Prague,1141
+Kyiv-Singapore,11864
+Kyiv-Tokyo,11079

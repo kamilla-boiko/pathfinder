@@ -1,7 +1,0 @@
-5
-Aaaaa-Bbbbb,11
-Aaaaa-Ccccc,10
-Bbbbb-Ddddd,5
-Ccccc-Ddddd,6
-Ccccc-Eeeee,15
-Ddddd-Eeeee,4
